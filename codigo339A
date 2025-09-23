@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define TAM 100
+
+void print_array(int * A, int tam){
+    for(int i = 0; i < tam; i = i +1){
+        if(i==tam-1){
+             printf("%d", A[i]);
+        }
+        else{
+            printf("%d+", A[i]);
+        }
+    }
+}
+
+void insertion_sort(int * A, int tam){
+    for(int j = 1; j < tam; j = j +1){
+        int key = A[j];
+        int i = j-1;
+        while(i >= 0 && A[i]>key){
+            A[i+1] = A[i];
+            i = i -1;
+        }
+        A[i+1] = key;
+    }
+}
+
+int main(){
+    char line [TAM] = {};
+    int A[TAM];
+    const char separador[] = "+";
+    char * pedaco;
+    scanf("%s", line);
+    
+        pedaco = strtok(line, separador);
+        int i = 0;
+        int tam = 0;
+        while (pedaco != NULL)
+        {
+			int value = atoi(pedaco);
+            pedaco = strtok(NULL, separador);
+            A[i] = value;
+            i++;
+            tam++;
+        }
+        insertion_sort(A, tam);
+        print_array(A,tam);
+}
+

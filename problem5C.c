@@ -12,7 +12,7 @@ typedef struct Pilha{
 void imprimir_pilha(Pilha * pilha){
     printf("\n");
     for(int i=pilha->topo; i > -1; i = i -1){
-        printf("\t🧇 %d\n",pilha->S[i]);
+        printf("\t %d\n",pilha->S[i]);
     }
     printf("\n");
 }
@@ -45,7 +45,7 @@ void empurrar(Pilha * pilha, int x){
         pilha->S[pilha->topo] = x;
     }
     else{
-        printf("Sem espaço na pilha 🌝\n");
+        printf("Sem espaço na pilha \n");
     }
 }
 
@@ -60,7 +60,7 @@ int pocar(Pilha * pilha){
         return pilha->S[pilha->topo+1];
     }
     else{
-        printf("Pilha vazia! 🪹");
+        printf("Pilha vazia! ");
     }
 }
 
